@@ -1,0 +1,10 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\DBController.dll.config
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\DBController.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\DBController.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\obj\Debug\DBController.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\obj\Debug\DBController.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\ImageViewer\DBController\obj\Debug\DBController.csprojResolveAssemblyReference.cache

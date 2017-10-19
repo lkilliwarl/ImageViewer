@@ -1,0 +1,62 @@
+﻿<Window x:Class="ImageViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageViewer"
+        mc:Ignorable="d"
+        Title="{DynamicResource m_Title}" Height="600" Width="800" MinHeight="300" MinWidth="400">
+    <Window.DataContext>
+        <local:MainWindowViewModel></local:MainWindowViewModel>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="Black">
+            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <Image x:Name="imageDataBox" Stretch="None" Margin="5" Source="{Binding SelectedBitmapImage}"></Image>
+            </ScrollViewer>
+        </Border>
+        <DockPanel Grid.Row="0">
+                <Button x:Name="openButton" Margin="10 5 10 5" Content="{DynamicResource m_Open}" Command="{Binding OpenImage}"></Button>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="1">
+            <ComboBox x:Name="menuLanguage" Grid.Row="0" Grid.Column="1" IsEditable="True" IsReadOnly="True" Text="{DynamicResource m_Language}" VerticalAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
+        </DockPanel>
+        <StackPanel x:Name="menuStackPanel" Grid.Column="1" Grid.Row="1">
+            <TabControl>
+                <TabItem Header="{DynamicResource m_Add}">
+                    <StackPanel>
+                        <Label x:Name="tagLabel" Content="{DynamicResource m_Tag}" HorizontalContentAlignment="Center"></Label>
+                        <TextBox x:Name="tagTextBox" Margin="5 0 5 0" TextAlignment="Center" Text="{Binding CurrentTag}"></TextBox>
+                        <Button x:Name="addImageButton" Margin="5" Content="{DynamicResource m_Add}" Command="{Binding AddImage}"></Button>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="{DynamicResource m_EditPage}">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <TextBox x:Name="editTextBox" TextAlignment="Center" Margin="5 0 5 0" Text="{Binding CurrentTag}"></TextBox>
+                            <Button x:Name="editImageButton" Content="{DynamicResource m_EditTag}" Margin="5" Command="{Binding EditImage}"></Button>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="{DynamicResource m_FilterPage}">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <TextBox x:Name="filterTextBox"  TextAlignment="Center" Margin="5 0 5 0" Text="{Binding FilterString}"></TextBox>
+                            <Button x:Name="filterImageButton" Content="{DynamicResource m_Filter}" Margin="5" Command="{Binding FilterImage}"></Button>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+            <ListBox x:Name="imageListBox" MaxHeight="200" Margin="5" SelectedItem="{Binding SelectedImage}" ItemsSource="{Binding Images}"></ListBox>
+            <Button x:Name="deleteImageButton" Margin="5" Content="{DynamicResource m_Delete}" Command="{Binding DelteImage}"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
